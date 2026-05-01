@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="הלחם והחמאה — מאפיית בוטיק במודיעין. לחמי מחמצת, מאפים יומיים, עוגות אירועים. אפוי ביד, מוגש באהבה." />
+  <title>הלחם והחמאה | Bread &amp; Butter · מודיעין</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400;1,500&family=Assistant:wght@300;400;500;600&family=Gveret+Levin+AlefAlefAlef&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- OPENING LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-bg-shimmer"></div>
+  <div class="loader-stage">
+    <div class="loader-logo-wrap">
+      <img src="photos/logo.jpg" alt="" class="loader-logo-img" />
+    </div>
+    <div class="loader-ornament">
+      <span class="lo-line"></span>
+      <span class="lo-diamond">◆</span>
+      <span class="lo-line"></span>
+    </div>
+    <div class="lw lw-top">
+      <span>הלחם</span>
+    </div>
+    <div class="loader-line"><div class="ll-glow"></div></div>
+    <div class="lw lw-bottom">
+      <span>והחמאה</span>
+    </div>
+    <div class="loader-sub">BREAD &amp; BUTTER · MODIIN</div>
+  </div>
+  <div class="loader-progress"><div class="loader-progress-bar"></div></div>
+</div>
+
+<div id="glow" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav id="nav" role="navigation" aria-label="ניווט ראשי">
+  <div class="nav-logo-group">
+    <img src="photos/logo.jpg" alt="לוגו הלחם והחמאה" class="nav-logo-img" />
+    <div>
+      <div class="nav-brand">הלחם והחמאה</div>
+      <div class="nav-sub">BREAD &amp; BUTTER · MODIIN</div>
+    </div>
+  </div>
+  <ul class="nav-links" role="list">
+    <li><a href="#story">הסיפור</a></li>
+    <li><a href="#menu">תפריט</a></li>
+    <li><a href="#products">מוצרים</a></li>
+    <li><a href="#reviews">ביקורות</a></li>
+    <li><a href="#info">מצאו אותנו</a></li>
+  </ul>
+  <a href="https://wa.me/972723725635" target="_blank" rel="noopener noreferrer" class="nav-cta">הזמינו עכשיו</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="פתח תפריט" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <ul role="list">
+    <li><a href="#story" class="mobile-nav-link">הסיפור שלנו</a></li>
+    <li><a href="#menu" class="mobile-nav-link">התפריט</a></li>
+    <li><a href="#products" class="mobile-nav-link">המוצרים</a></li>
+    <li><a href="#reviews" class="mobile-nav-link">ביקורות</a></li>
+    <li><a href="#special" class="mobile-nav-link">הזמנות מיוחדות</a></li>
+    <li><a href="#info" class="mobile-nav-link">מצאו אותנו</a></li>
+  </ul>
+  <a href="https://wa.me/972723725635" target="_blank" rel="noopener noreferrer" class="btn-gold" style="margin-top:2rem;">שלחו לנו הודעה</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="photos/ההככי.webp" alt="" class="hero-bg-img" />
+  </div>
+  <div class="hero-overlay"></div>
+
+  <!-- Gold shimmer sweep -->
+  <div class="hero-shimmer" aria-hidden="true"></div>
+
+  <!-- Corner frame ornaments -->
+  <div class="hero-corners" aria-hidden="true">
+    <span class="hero-corner hero-corner--tl"></span>
+    <span class="hero-corner hero-corner--tr"></span>
+    <span class="hero-corner hero-corner--bl"></span>
+    <span class="hero-corner hero-corner--br"></span>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge" aria-hidden="true">
+      <span class="hero-badge-dot">◆</span>
+      <span>BREAD &amp; BUTTER · MODIIN · מאפיית בוטיק</span>
+      <span class="hero-badge-dot">◆</span>
+    </div>
+
+    <h1 class="hero-h1">
+      <span class="hero-h1-main">הלחם</span>
+      <span class="hero-h1-em">והחמאה</span>
+    </h1>
+
+    <p class="hero-sub">אפוי ביד. מוגש באהבה.</p>
+
+    <div class="hero-line-deco" aria-hidden="true">
+      <div class="line"></div>
+      <span>◆</span>
+      <div class="line"></div>
+    </div>
+
+    <div class="hero-meta">
+      <span>מודיעין</span>
+      <span class="hero-meta-sep">·</span>
+      <span>כשר רבנות</span>
+      <span class="hero-meta-sep">·</span>
+      <span>פתוח מ‑06:30</span>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#menu" class="btn-gold">לתפריט</a>
+      <a href="#info" class="btn-ghost">מצאו אותנו</a>
+    </div>
+  </div>
+
+  <!-- Hero bottom floating features -->
+  <div class="hero-features" aria-hidden="true">
+    <div class="hero-feat">
+      <span class="hero-feat-icon">✦</span>
+      <span class="hero-feat-text">עבודת יד</span>
+    </div>
+    <div class="hero-feat-sep"></div>
+    <div class="hero-feat">
+      <span class="hero-feat-icon">✦</span>
+      <span class="hero-feat-text">כשר רבנות</span>
+    </div>
+    <div class="hero-feat-sep"></div>
+    <div class="hero-feat">
+      <span class="hero-feat-icon">✦</span>
+      <span class="hero-feat-text">פתוח מ-06:30</span>
+    </div>
+    <div class="hero-feat-sep"></div>
+    <div class="hero-feat">
+      <span class="hero-feat-icon">✦</span>
+      <span class="hero-feat-text">מחמצת אמיתית</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SOCIAL SIDEBAR -->
+<div class="social-sidebar" aria-label="רשתות חברתיות">
+  <a href="https://instagram.com/bread.and.butter.modiin" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    <span class="social-label">Instagram</span>
+  </a>
+  <a href="https://wa.me/972723725635" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <span class="social-label">WhatsApp</span>
+  </a>
+  <a href="tel:0723725635" class="social-btn" aria-label="טלפון">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+    <span class="social-label">072-3725635</span>
+  </a>
+  <div class="social-line" aria-hidden="true"></div>
+</div>
+
+<!-- MARQUEE 1 -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="mq-item mq-dim">QUALITY BAKED DAILY</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">אפוי ביד</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">מוגש באהבה</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">MODIIN</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">BREAD &amp; BUTTER</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">מאפיית בוטיק</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">QUALITY BAKED DAILY</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">אפוי ביד</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">מוגש באהבה</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">MODIIN</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">BREAD &amp; BUTTER</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">מאפיית בוטיק</span><span class="mq-item mq-gold">✦</span>
+  </div>
+</div>
+
+<!-- STORY -->
+<section id="story">
+  <div class="story-ornament" aria-hidden="true">
+    <div class="story-orn-num">I</div>
+    <div class="story-orn-vline"></div>
+  </div>
+
+  <div class="story-body">
+    <div class="story-header reveal reveal-up">
+      <p class="section-label">הסיפור שלנו</p>
+      <h2 class="section-title">שני חברים,<br /><em>תשוקה אחת</em></h2>
+      <div class="gold-rule" aria-hidden="true"><span>◆</span></div>
+    </div>
+
+    <!-- Handwriting animation -->
+    <div class="story-handwriting-wrap reveal reveal-up d1" aria-hidden="true">
+      <span class="story-handwriting">Quality Baked Daily</span>
+    </div>
+
+    <div class="story-columns">
+      <p class="body-text reveal reveal-up d1">אחרי שנות שירות קרבי, שני בחורים צעירים החליטו להגשים חלום — לפתוח מאפיית בוטיק שעושה את הדברים כמו שצריך. לא קיצורי דרך, לא פשרות. רק בצק, זמן ואהבה.</p>
+      <p class="body-text reveal reveal-up d2">בכל בוקר, לפני שמודיעין מתעוררת, הכבשן כבר דולק. הבצק כבר תוסס. כי אנחנו מאמינים שאוכל אמיתי לוקח זמן — ושווה כל שנייה. כל כיכר לחם, כל קרואסון, כל עוגה — מוכנה ביד ומוגשת באהבה.</p>
+    </div>
+
+    <div class="story-values reveal reveal-up d2">
+      <div class="story-value">
+        <div class="story-value-icon">◈</div>
+        <div class="story-value-label">עבודת יד</div>
+        <div class="story-value-desc">כל מוצר מוכן אצלנו בסדנא מאפס, ללא מוצרים מוכנים</div>
+      </div>
+      <div class="story-value">
+        <div class="story-value-icon">◈</div>
+        <div class="story-value-label">טריות מדי יום</div>
+        <div class="story-value-desc">אופים בשעות הקטנות כדי שתמיד תקבלו טרי מהתנור</div>
+      </div>
+      <div class="story-value">
+        <div class="story-value-icon">◈</div>
+        <div class="story-value-label">מחמצת אמיתית</div>
+        <div class="story-value-desc">לחמים שתוססים 24–48 שעות לפני האפייה</div>
+      </div>
+    </div>
+
+    <blockquote class="story-pullquote reveal reveal-up d2">"כל כיכר לחם היא סיפור — של זמן, של סבלנות, של אהבה."</blockquote>
+
+    <div class="story-stats reveal reveal-up d3">
+      <div class="stat-item">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">עבודת יד</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-num">06<span>:30</span></div>
+        <div class="stat-label">פותחים בשישי</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-num">48<span>h</span></div>
+        <div class="stat-label">תסיסת המחמצת</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">אהבה לאפייה</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE 2 -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track" style="animation-direction:reverse;animation-duration:38s;">
+    <span class="mq-item mq-dim">לחם מחמצת</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">קרואסון חמאה</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">מאפה פיסטוק</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">עוגות אירועים</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">SOURDOUGH</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">CROISSANT</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">BOUTIQUE BAKERY</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">לחם מחמצת</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">קרואסון חמאה</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">מאפה פיסטוק</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">עוגות אירועים</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">SOURDOUGH</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">CROISSANT</span><span class="mq-item mq-gold">◆</span>
+    <span class="mq-item mq-dim">BOUTIQUE BAKERY</span><span class="mq-item mq-gold">◆</span>
+  </div>
+</div>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="section-header reveal">
+    <p class="section-label" style="margin-bottom:1rem;">מה יש אצלנו</p>
+    <h2 class="section-title">התפריט שלנו</h2>
+    <div class="gold-rule" style="width:9rem;margin-inline:auto;margin-top:1.5rem;" aria-hidden="true"><span>◆</span></div>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-col reveal reveal-up d1">
+      <div class="menu-col-header">
+        <span class="menu-col-icon">⬡</span>
+        <h3 class="menu-col-title">לחמים</h3>
+      </div>
+      <ul class="menu-list">
+        <li class="menu-item"><span class="menu-item-name">לחם מחמצת</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">לחם כוסמין</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">לחם שיפון</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">לחמניות טריות</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">בייגלה</span><span class="menu-dots"></span></li>
+      </ul>
+    </div>
+
+    <div class="menu-col reveal reveal-up d2">
+      <div class="menu-col-header">
+        <span class="menu-col-icon">⬡</span>
+        <h3 class="menu-col-title">מאפים</h3>
+      </div>
+      <ul class="menu-list">
+        <li class="menu-item"><span class="menu-item-name">קרואסון חמאה</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">מאפה פיסטוק</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">בצק עלים</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">מאפה גבינה</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">קיש</span><span class="menu-dots"></span></li>
+      </ul>
+    </div>
+
+    <div class="menu-col reveal reveal-up d3">
+      <div class="menu-col-header">
+        <span class="menu-col-icon">⬡</span>
+        <h3 class="menu-col-title">עוגות ומתוקים</h3>
+      </div>
+      <ul class="menu-list">
+        <li class="menu-item"><span class="menu-item-name">עוגות ביתיות</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">עוגיות מסבתא</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">עוגות אירועים</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">מגשי מתוקים</span><span class="menu-dots"></span></li>
+        <li class="menu-item menu-item--vegan"><span class="menu-item-name">אופציות טבעוניות</span><span class="menu-dots"></span><span class="menu-tag">טבעוני</span></li>
+      </ul>
+    </div>
+
+    <div class="menu-col reveal reveal-up d4">
+      <div class="menu-col-header">
+        <span class="menu-col-icon">⬡</span>
+        <h3 class="menu-col-title">קפה וכריכים</h3>
+      </div>
+      <ul class="menu-list">
+        <li class="menu-item"><span class="menu-item-name">קפה איכותי</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">כריכים טריים</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">סלטים</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">פסטות</span><span class="menu-dots"></span></li>
+        <li class="menu-item"><span class="menu-item-name">מגשי אירוח</span><span class="menu-dots"></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="menu-note reveal reveal-up" style="text-align:center;margin-top:2.5rem;">✦ כשר תחת השגחת רבנות מודיעין · התפריט המלא בתוך הסניף ✦</p>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-header reveal">
+    <p class="section-label" style="margin-bottom:1rem;">מה מחכה לכם</p>
+    <h2 class="section-title">גלריית המאפים</h2>
+    <div class="gold-rule" style="width:8rem;margin-inline:auto;margin-top:1.5rem;" aria-hidden="true"><span>◆</span></div>
+  </div>
+
+  <!-- 3D Carousel -->
+  <div class="carousel-wrap reveal">
+    <div class="carousel-viewport" id="carousel-viewport"></div>
+
+    <button class="carousel-btn carousel-btn--prev" id="carousel-prev" aria-label="הקודם">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <button class="carousel-btn carousel-btn--next" id="carousel-next" aria-label="הבא">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-header reveal">
+    <p class="section-label" style="margin-bottom:1rem;">אומרים עלינו</p>
+    <h2 class="section-title">הלקוחות מדברים</h2>
+    <div class="gold-rule" style="width:8rem;margin-inline:auto;margin-top:1.5rem;" aria-hidden="true"><span>◆</span></div>
+  </div>
+
+  <div class="reviews-columns">
+
+    <!-- COLUMN 1 — scrolls up -->
+    <div class="reviews-col">
+      <div class="reviews-col-inner reviews-col-inner--1">
+        <!-- card A -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:168">מ</div></div>
+              <div class="review-user-info">
+                <p class="review-name">מיכל ש.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"הלחם מחמצת הכי טעים שאכלתי. הקרום מושלם, הפנים — רך ואוורירי. כל שישי אנחנו כאן."</p>
+          <p class="review-date">לפני חודשיים</p>
+        </article>
+        <!-- card B -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:210">ד</div></div>
+              <div class="review-user-info">
+                <p class="review-name">דניאל כ.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"הקרואסון שלהם גורם לך לעצום עיניים. חמאה אמיתית, שכבות אמיתיות. לא מצאתי טוב יותר במודיעין."</p>
+          <p class="review-date">לפני 3 שבועות</p>
+        </article>
+        <!-- card C -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:270">י</div></div>
+              <div class="review-user-info">
+                <p class="review-name">יעל ב.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"מגיעים כל שישי לאפות — הלחמניות, הקרואסון, הכל. שניהם מדהימים, מקום עם נשמה אמיתית."</p>
+          <p class="review-date">לפני שבועיים</p>
+        </article>
+        <!-- card D -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:330">ר</div></div>
+              <div class="review-user-info">
+                <p class="review-name">רחל מ.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              <span>Instagram</span>
+            </div>
+          </div>
+          <p class="review-text">"הזמנתי עוגת יום הולדת מותאמת אישית — הפתיעה את כולם. יפה, טעימה, ומדויקת בדיוק לבקשה."</p>
+          <p class="review-date">לפני שבוע</p>
+        </article>
+        <!-- duplicate for infinite loop -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:168">מ</div></div>
+              <div class="review-user-info">
+                <p class="review-name">מיכל ש.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"הלחם מחמצת הכי טעים שאכלתי. הקרום מושלם, הפנים — רך ואוורירי. כל שישי אנחנו כאן."</p>
+          <p class="review-date">לפני חודשיים</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:210">ד</div></div>
+              <div class="review-user-info">
+                <p class="review-name">דניאל כ.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"הקרואסון שלהם גורם לך לעצום עיניים. חמאה אמיתית, שכבות אמיתיות. לא מצאתי טוב יותר במודיעין."</p>
+          <p class="review-date">לפני 3 שבועות</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:270">י</div></div>
+              <div class="review-user-info">
+                <p class="review-name">יעל ב.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"מגיעים כל שישי לאפות — הלחמניות, הקרואסון, הכל. שניהם מדהימים, מקום עם נשמה אמיתית."</p>
+          <p class="review-date">לפני שבועיים</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:330">ר</div></div>
+              <div class="review-user-info">
+                <p class="review-name">רחל מ.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              <span>Instagram</span>
+            </div>
+          </div>
+          <p class="review-text">"הזמנתי עוגת יום הולדת מותאמת אישית — הפתיעה את כולם. יפה, טעימה, ומדויקת בדיוק לבקשה."</p>
+          <p class="review-date">לפני שבוע</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- COLUMN 2 — scrolls down (hidden on mobile) -->
+    <div class="reviews-col reviews-col--mid">
+      <div class="reviews-col-inner reviews-col-inner--2">
+        <!-- card E -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:38">א</div></div>
+              <div class="review-user-info">
+                <p class="review-name">אמיר ל.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--whatsapp">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>WhatsApp</span>
+            </div>
+          </div>
+          <p class="review-text">"המגש שהזמנו לאירוע עסקי היה ה‑highlight של הערב. כולם שאלו מאיפה. שירות מדהים, מקצוענים אמיתיים."</p>
+          <p class="review-date">לפני חודש</p>
+        </article>
+        <!-- card F -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:10">נ</div></div>
+              <div class="review-user-info">
+                <p class="review-name">נועם ג.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"הזמנתי מגש אירוח לאירוע גדול — כולם שאלו מאיפה ואיך. הכל טרי, יפה ומדויק. חוזר בכל הזדמנות."</p>
+          <p class="review-date">לפני 5 ימים</p>
+        </article>
+        <!-- card G -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:130">ת</div></div>
+              <div class="review-user-info">
+                <p class="review-name">תמר ה.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              <span>Instagram</span>
+            </div>
+          </div>
+          <p class="review-text">"המאפה פיסטוק שינה לי את החיים. הבצק, הקרם, הטעם — בלתי ייאמן. מגיעה בכל בוקר בשביל זה."</p>
+          <p class="review-date">לפני 3 ימים</p>
+        </article>
+        <!-- card H -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:200">ש</div></div>
+              <div class="review-user-info">
+                <p class="review-name">שירה כ.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--whatsapp">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>WhatsApp</span>
+            </div>
+          </div>
+          <p class="review-text">"קניתי לחם כוסמין שלא ידעתי שהוא זה שהייתי מחפש. נפלא עם חמאה ומלח. אין כמוהם."</p>
+          <p class="review-date">לפני חודשיים</p>
+        </article>
+        <!-- duplicate for infinite loop -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:38">א</div></div>
+              <div class="review-user-info">
+                <p class="review-name">אמיר ל.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--whatsapp">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>WhatsApp</span>
+            </div>
+          </div>
+          <p class="review-text">"המגש שהזמנו לאירוע עסקי היה ה‑highlight של הערב. כולם שאלו מאיפה. שירות מדהים, מקצוענים אמיתיים."</p>
+          <p class="review-date">לפני חודש</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:10">נ</div></div>
+              <div class="review-user-info">
+                <p class="review-name">נועם ג.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"הזמנתי מגש אירוח לאירוע גדול — כולם שאלו מאיפה ואיך. הכל טרי, יפה ומדויק. חוזר בכל הזדמנות."</p>
+          <p class="review-date">לפני 5 ימים</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:130">ת</div></div>
+              <div class="review-user-info">
+                <p class="review-name">תמר ה.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              <span>Instagram</span>
+            </div>
+          </div>
+          <p class="review-text">"המאפה פיסטוק שינה לי את החיים. הבצק, הקרם, הטעם — בלתי ייאמן. מגיעה בכל בוקר בשביל זה."</p>
+          <p class="review-date">לפני 3 ימים</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:200">ש</div></div>
+              <div class="review-user-info">
+                <p class="review-name">שירה כ.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--whatsapp">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>WhatsApp</span>
+            </div>
+          </div>
+          <p class="review-text">"קניתי לחם כוסמין שלא ידעתי שהוא זה שהייתי מחפש. נפלא עם חמאה ומלח. אין כמוהם."</p>
+          <p class="review-date">לפני חודשיים</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- COLUMN 3 — scrolls up (hidden on tablet) -->
+    <div class="reviews-col reviews-col--last">
+      <div class="reviews-col-inner reviews-col-inner--3">
+        <!-- card I -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:50">ע</div></div>
+              <div class="review-user-info">
+                <p class="review-name">עדי מ.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"הבייגלה הכי טוב שאכלתי. חם, פריך מבחוץ, רך מבפנים. השכנים שאלו מאיפה הריח."</p>
+          <p class="review-date">לפני 4 ימים</p>
+        </article>
+        <!-- card J -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:290">ל</div></div>
+              <div class="review-user-info">
+                <p class="review-name">לי ב.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              <span>Instagram</span>
+            </div>
+          </div>
+          <p class="review-text">"הכריך שלהם הוא חוויה. הלחם, המרקם, הטעם — לא דומה לשום מקום אחר. חזרתי שלוש פעמים השבוע."</p>
+          <p class="review-date">לפני שבוע</p>
+        </article>
+        <!-- card K -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:80">ג</div></div>
+              <div class="review-user-info">
+                <p class="review-name">גל ר.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"לקחתי עוגיות לפגישת עסקים — כולם עצרו להתעסק בהן. מה שמפריד בין מאפייה לחוויה."</p>
+          <p class="review-date">לפני חודש</p>
+        </article>
+        <!-- card L -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:160">ה</div></div>
+              <div class="review-user-info">
+                <p class="review-name">הדר ש.</p>
+                <div class="review-stars" aria-label="5 כוכבים">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--whatsapp">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>WhatsApp</span>
+            </div>
+          </div>
+          <p class="review-text">"ניסיתי הרבה מאפיות במודיעין — זו המנצחת בכל קטגוריה. אנשים עם לב שאופים עם לב."</p>
+          <p class="review-date">לפני שלושה ימים</p>
+        </article>
+        <!-- duplicate for infinite loop -->
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:50">ע</div></div>
+              <div class="review-user-info">
+                <p class="review-name">עדי מ.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"הבייגלה הכי טוב שאכלתי. חם, פריך מבחוץ, רך מבפנים. השכנים שאלו מאיפה הריח."</p>
+          <p class="review-date">לפני 4 ימים</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:290">ל</div></div>
+              <div class="review-user-info">
+                <p class="review-name">לי ב.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              <span>Instagram</span>
+            </div>
+          </div>
+          <p class="review-text">"הכריך שלהם הוא חוויה. הלחם, המרקם, הטעם — לא דומה לשום מקום אחר. חזרתי שלוש פעמים השבוע."</p>
+          <p class="review-date">לפני שבוע</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:80">ג</div></div>
+              <div class="review-user-info">
+                <p class="review-name">גל ר.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--google">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span>Google</span>
+            </div>
+          </div>
+          <p class="review-text">"לקחתי עוגיות לפגישת עסקים — כולם עצרו להתעסק בהן. מה שמפריד בין מאפייה לחוויה."</p>
+          <p class="review-date">לפני חודש</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card-top">
+            <div class="review-user">
+              <div class="review-avatar-wrap"><div class="review-avatar" style="--av-hue:160">ה</div></div>
+              <div class="review-user-info">
+                <p class="review-name">הדר ש.</p>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review-source-badge review-source-badge--whatsapp">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>WhatsApp</span>
+            </div>
+          </div>
+          <p class="review-text">"ניסיתי הרבה מאפיות במודיעין — זו המנצחת בכל קטגוריה. אנשים עם לב שאופים עם לב."</p>
+          <p class="review-date">לפני שלושה ימים</p>
+        </article>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="reviews-cta reveal reveal-up" style="text-align:center;margin-top:3rem;">
+    <a href="https://wa.me/972723725635" target="_blank" rel="noopener noreferrer" class="btn-outline"><span>השאירו ביקורת ב‑WhatsApp</span></a>
+  </div>
+</section>
+
+<!-- MARQUEE 3 -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track" style="animation-duration:26s;">
+    <span class="mq-item mq-dim">QUALITY BAKED DAILY</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">אפוי ביד. מוגש באהבה.</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">כשר — רבנות מודיעין</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">BREAD &amp; BUTTER</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">עמק דותן 23 · מרכז מליבו</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">QUALITY BAKED DAILY</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">אפוי ביד. מוגש באהבה.</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">כשר — רבנות מודיעין</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">BREAD &amp; BUTTER</span><span class="mq-item mq-gold">✦</span>
+    <span class="mq-item mq-dim">עמק דותן 23 · מרכז מליבו</span><span class="mq-item mq-gold">✦</span>
+  </div>
+</div>
+
+<!-- SPECIAL ORDERS -->
+<section id="special">
+  <div class="special-grid">
+    <div class="special-img reveal reveal-right">
+      <img src="photos/רקרקרק.avif" alt="עוגות אירועים" loading="lazy" />
+      <div class="special-img-overlay"></div>
+    </div>
+    <div class="special-content">
+      <p class="section-label reveal reveal-up">לאירועים שלכם</p>
+      <h2 class="section-title reveal reveal-up d1">הזמנות<br /><em>מיוחדות</em></h2>
+      <div class="gold-rule reveal reveal-up d1" style="width:6rem;" aria-hidden="true"><span>◆</span></div>
+      <p class="body-text reveal reveal-up d2">עוגות יום הולדת, מגשי אירוח מרשימים, קייטרינג מתוק — הכל בעבודת יד ובאיכות שתגרום לכולם לדבר.</p>
+      <ul class="special-list reveal reveal-up d3">
+        <li>עוגות אירועים מותאמות אישית</li>
+        <li>מגשי מאפים, סלטים וקיש</li>
+        <li>אופציות טבעוניות</li>
+        <li>משלוחים — בקרוב</li>
+      </ul>
+      <a href="https://wa.me/972723725635" target="_blank" rel="noopener noreferrer" class="btn-outline reveal reveal-up d4"><span>צרו קשר להזמנה</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="info">
+  <div class="section-header reveal">
+    <p class="section-label" style="margin-bottom:1rem;">בואו לבקר</p>
+    <h2 class="section-title">מצאו אותנו</h2>
+    <div class="gold-rule" style="width:8rem;margin-inline:auto;margin-top:1.5rem;" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <div class="info-cards">
+    <div class="info-card reveal reveal-up">
+      <p class="info-card-label">כתובת</p>
+      <div class="info-rule"></div>
+      <address class="info-content" style="font-style:normal;">עמק דותן 23<br />מרכז מליבו (קומה עליונה)<br />מודיעין-מכבים-רעות</address>
+    </div>
+    <div class="info-card reveal reveal-up d1">
+      <p class="info-card-label">שעות פתיחה</p>
+      <div class="info-rule"></div>
+      <div class="info-content">
+        <div class="info-hours-row"><span>ראשון – חמישי</span><span>07:00 – 20:30</span></div>
+        <div class="info-hours-row"><span>שישי</span><span>06:30 – 14:30</span></div>
+        <div class="info-hours-row"><span>שבת</span><span style="color:var(--cream-dim)">סגור</span></div>
+        <div class="kosher-badge">✦ כשר — רבנות מודיעין</div>
+      </div>
+    </div>
+    <div class="info-card reveal reveal-up d2">
+      <p class="info-card-label">צרו קשר</p>
+      <div class="info-rule"></div>
+      <div class="info-content" style="display:flex;flex-direction:column;gap:0.75rem;">
+        <a href="tel:0723725635">072-3725635</a>
+        <a href="https://wa.me/972723725635" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">WhatsApp</a>
+        <a href="mailto:bread.butter.modiin@gmail.com">bread.butter.modiin@gmail.com</a>
+        <a href="https://instagram.com/bread.and.butter.modiin" target="_blank" rel="noopener noreferrer">@bread.and.butter.modiin</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner">
+    <p class="section-label reveal reveal-up" style="margin-bottom:1.5rem;">מגיע לכם</p>
+    <blockquote class="cta-quote reveal reveal-up d1">
+      "כי אוכל אמיתי לוקח זמן —<br />
+      <strong>ושווה כל שנייה"</strong>
+    </blockquote>
+    <div class="gold-rule reveal reveal-up d2" style="width:9rem;margin-inline:auto;margin-block:2.5rem;"><span>◆</span></div>
+    <div class="reveal reveal-scale d2" style="margin-bottom:2.5rem;display:flex;justify-content:center;">
+      <div class="cta-logo-ring">
+        <img src="photos/logo.jpg" alt="הלחם והחמאה" />
+      </div>
+    </div>
+    <div class="reveal reveal-up d3" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/972723725635" target="_blank" rel="noopener noreferrer" class="btn-gold">שלחו לנו הודעה</a>
+      <a href="tel:0723725635" class="btn-ghost">072-3725635</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">הלחם והחמאה</span>
+    <p class="footer-copy">© 2025 BREAD &amp; BUTTER · MODIIN · QUALITY BAKED DAILY</p>
+    <div class="footer-links">
+      <a href="tel:0723725635">072-3725635</a>
+      <a href="https://wa.me/972723725635" target="_blank" rel="noopener noreferrer" class="gold">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<!-- LOYALTY POPUP -->
+<div id="loyalty-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-label="הצטרפו למועדון לקוחות">
+  <div class="popup-card">
+    <button class="popup-close" id="popup-close" aria-label="סגור">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg>
+    </button>
+    <div class="popup-badge">◆ מועדון לקוחות ◆</div>
+    <h2 class="popup-title">הצטרפו<br /><em>למשפחה</em></h2>
+    <div class="gold-rule popup-rule" aria-hidden="true"><span>◆</span></div>
+    <div class="popup-perks">
+      <div class="popup-perk">
+        <div class="popup-perk-icon">10%</div>
+        <div class="popup-perk-text">
+          <strong>הנחה על כל רכישה</strong>
+          <p>לכל חברי מועדון הלחם והחמאה</p>
+        </div>
+      </div>
+      <div class="popup-perk">
+        <div class="popup-perk-icon">🍞</div>
+        <div class="popup-perk-text">
+          <strong>לחם מחמצת מתנה</strong>
+          <p>בקנייה העשירית — ממש מאיתנו</p>
+        </div>
+      </div>
+    </div>
+    <form class="popup-form" id="popup-form">
+      <input type="text" class="popup-input" placeholder="שמך המלא" required />
+      <input type="tel" class="popup-input" placeholder="מספר טלפון" required dir="ltr" />
+      <button type="submit" class="btn-gold popup-submit">הצטרפו למועדון</button>
+    </form>
+    <p class="popup-note">✦ ללא דואר זבל · נחזור אליכם בוואטסאפ בלבד ✦</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
