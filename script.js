@@ -90,13 +90,13 @@ document.querySelectorAll('.mobile-nav-link').forEach(link => {
   if (!viewport) return;
 
   const items = [
-    { src: 'photos/1.avif',       cat: 'SOURDOUGH · לחמים',     name: 'לחם מחמצת',     desc: 'אפוי לאט, תוסס ועשיר' },
-    { src: 'photos/קרקר.avif',    cat: 'CROISSANT · מאפים',     name: 'קרואסון חמאה',  desc: 'שכבות בצק עלים וחמאה' },
-    { src: 'photos/הההה.jpeg',    cat: 'PISTACHIO · מאפים',     name: 'מאפה פיסטוק',   desc: 'קרם פיסטוק בבצק פריך' },
+    { src: 'photos/eee.jpg',      cat: 'SOURDOUGH · לחמים',     name: 'לחם מחמצת',     desc: 'אפוי לאט, תוסס ועשיר' },
+    { src: 'photos/rr.avif',      cat: 'CROISSANT · מאפים',     name: 'קרואסון חמאה',  desc: 'שכבות בצק עלים וחמאה' },
+    { src: 'photos/hjhj.avif',   cat: 'PISTACHIO · מאפים',     name: 'מאפה פיסטוק',   desc: 'קרם פיסטוק בבצק פריך' },
     { src: 'photos/6677.jpeg',    cat: 'BOUTIQUE CAKE · עוגות', name: 'עוגת בוטיק',    desc: 'מותאמת אישית לכל אירוע' },
-    { src: 'photos/עערע.jpg',     cat: 'ROLLS · לחמים',         name: 'לחמניות',       desc: 'טריות בכל בוקר' },
+    { src: 'photos/yyy.webp',     cat: 'ROLLS · לחמים',         name: 'לחמניות',       desc: 'טריות בכל בוקר' },
     { src: 'photos/images.jpeg',  cat: 'COOKIES · עוגות',       name: 'עוגיות ביתיות', desc: 'מתכונים מסבתא' },
-    { src: 'photos/ככהר.jpeg',    cat: 'EVENT CAKE · עוגות',    name: 'עוגת אירועים',  desc: 'כי כל רגע מגיע מושלם' },
+    { src: 'photos/ccxx.jpeg',    cat: 'EVENT CAKE · עוגות',    name: 'עוגת אירועים',  desc: 'כי כל רגע מגיע מושלם' },
   ];
 
   const n = items.length;
@@ -146,11 +146,11 @@ document.querySelectorAll('.mobile-nav-link').forEach(link => {
       slide.style.zIndex     = isCenter ? 10 : isAdjacent ? 5 : 1;
       slide.classList.toggle('is-active', isCenter);
 
-      const tx      = pos * 110;           // % offset from center
-      const scale   = isCenter ? 1 : 0.8;
-      const ry      = pos * -12;           // rotateY deg
-      const opacity = isCenter ? 1 : isAdjacent ? 0.42 : 0;
-      const blur    = isCenter ? 0 : 5;
+      const tx      = pos * 110;
+      const scale   = isCenter ? 1 : 0.72;
+      const ry      = pos * -16;
+      const opacity = isCenter ? 1 : isAdjacent ? 0.28 : 0;
+      const blur    = isCenter ? 0 : 8;
 
       slide.style.transform = `translateX(${tx}%) scale(${scale}) rotateY(${ry}deg)`;
       slide.style.opacity   = opacity;
@@ -178,6 +178,115 @@ document.querySelectorAll('.mobile-nav-link').forEach(link => {
   resetAuto();
 })();
 
+/* ── popup ── */
+(function initPopup() {
+  const overlay = document.getElementById('popup');
+  const closeBtn = document.getElementById('popup-close');
+  if (!overlay) return;
+  if (sessionStorage.getItem('popup-dismissed')) return;
+
+  let shown = false;
+
+  function show() {
+    if (shown) return;
+    shown = true;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hide() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    sessionStorage.setItem('popup-dismissed', '1');
+  }
+
+  window.addEventListener('scroll', () => {
+    const progress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if (progress >= 0.25) show();
+  }, { passive: true });
+
+  closeBtn?.addEventListener('click', hide);
+  overlay.addEventListener('click', e => { if (e.target === overlay) hide(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') hide(); });
+})();
+
+/* ── back to top ── */
+(function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+/* ── theme toggle ── */
+(function initTheme() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  if (localStorage.getItem('theme') === 'light') document.body.classList.add('light');
+  btn.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+})();
+
+/* ── popup club form ── */
+(function initPopupClubForm() {
+  const form = document.getElementById('popup-club-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const name  = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const msgEl = document.getElementById('popup-club-msg');
+    if (!name || !phone) {
+      if (msgEl) { msgEl.textContent = 'נא למלא שם וטלפון'; msgEl.className = 'footer-form-msg error'; }
+      return;
+    }
+
+    const btn = form.querySelector('button[type="submit"]');
+    if (btn) btn.disabled = true;
+
+    // Try supabase if available, else just show success
+    let saved = false;
+    if (typeof SUPABASE_URL !== 'undefined' && !SUPABASE_URL.includes('PASTE_YOUR')) {
+      try {
+        const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+        const { error } = await db.from('club_members').insert({ name, phone });
+        if (!error) saved = true;
+      } catch (_) {}
+    } else {
+      saved = true;
+    }
+
+    if (saved) {
+      form.innerHTML = '<p class="popup-success">ברוך הבא למשפחה! 🎉<br /><span style="font-size:0.9rem;color:var(--cream-dim)">ניצור איתך קשר בקרוב עם הקוד שלך</span></p>';
+      sessionStorage.setItem('popup-dismissed', '1');
+    } else {
+      if (msgEl) { msgEl.textContent = 'משהו השתבש, נסה שוב'; msgEl.className = 'footer-form-msg error'; }
+      if (btn) btn.disabled = false;
+    }
+  });
+})();
+
+/* ── reviews mobile scroll progress ── */
+(function initReviewsMobileProgress() {
+  const track = document.querySelector('.reviews-mobile-track');
+  const bar   = document.querySelector('.reviews-mobile-bar');
+  if (!track || !bar) return;
+  track.addEventListener('scroll', () => {
+    const max = track.scrollWidth - track.clientWidth;
+    if (!max) return;
+    const progress = Math.abs(track.scrollLeft) / max;
+    const offset = progress * (100 / 6 * 5);
+    bar.style.transform = `translateX(${document.dir === 'rtl' ? offset : -offset}%)`;
+  }, { passive: true });
+})();
+
 /* ── smooth anchors ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -199,46 +308,4 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* ── loyalty popup ── */
-(function initLoyaltyPopup() {
-  const popup   = document.getElementById('loyalty-popup');
-  const closeBtn = document.getElementById('popup-close');
-  const form    = document.getElementById('popup-form');
-  if (!popup) return;
-
-  const STORAGE_KEY = 'bb_loyalty_closed';
-  if (sessionStorage.getItem(STORAGE_KEY)) return;
-
-  let shown = false;
-
-  function showPopup() {
-    if (shown) return;
-    shown = true;
-    popup.classList.add('open');
-    popup.setAttribute('aria-hidden', 'false');
-  }
-
-  function closePopup() {
-    popup.classList.remove('open');
-    popup.setAttribute('aria-hidden', 'true');
-    sessionStorage.setItem(STORAGE_KEY, '1');
-  }
-
-  window.addEventListener('scroll', () => {
-    if (shown) return;
-    const progress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    if (progress > 0.38) showPopup();
-  }, { passive: true });
-
-  closeBtn?.addEventListener('click', closePopup);
-  popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && shown) closePopup(); });
-
-  form?.addEventListener('submit', e => {
-    e.preventDefault();
-    const name = form.querySelector('input[type="text"]').value;
-    form.innerHTML = `<div class="popup-success">✓ ברוך/ה הבא/ה למועדון, ${name}!<br />ניצור קשר בקרוב 🍞</div>`;
-    setTimeout(closePopup, 3500);
-  });
-})();
 
